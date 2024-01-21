@@ -6,6 +6,141 @@
     <title>Random Quote Machine fCC</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        const Quotes = {
+  1: {
+    frase: "El código que estás escribiendo hoy es el legado que dejarás mañana.",
+    autor: "Shane Luke"
+  },
+  2: {
+    frase: "El mejor error es el que no cometes dos veces.",
+    autor: "Anonymous"
+  },
+  3: {
+    frase: "El arte de programar es el arte de organizar la complejidad, de dominar el caos.",
+    autor: "Brian Kernighan"
+  },
+  4: {
+    frase: "Siempre deja el código más limpio de lo que lo encontraste.",
+    autor: "Robert C. Martin"
+  },
+  5: {
+    frase: "La paciencia es el código más eficiente.",
+    autor: "Anonymous"
+  },
+  6: {
+    frase: "El mejor código es aquel que ni siquiera parece que fue escrito.",
+    autor: "Ward Cunningham"
+  },
+  7: {
+    frase: "Los programadores son los maestros modernos; enseñan a las máquinas cómo pensar.",
+    autor: "Anonymous"
+  },
+  8: {
+    frase: "La simplicidad es la máxima sofisticación.",
+    autor: "Leonardo da Vinci"
+  },
+  9: {
+    frase: "Hazlo comprensible antes de hacerlo rápido.",
+    autor: "John Johnson"
+  },
+  10: {
+    frase: "Escribe código como si el próximo mantenedor fuera un psicópata que sabe dónde vives.",
+    autor: "Anonymous"
+  },
+  11: {
+    frase: "El conocimiento es poder, pero la práctica es la clave.",
+    autor: "Anonymous"
+  },
+  12: {
+    frase: "La innovación distingue entre un líder y un seguidor.",
+    autor: "Steve Jobs"
+  },
+  13: {
+    frase: "La curiosidad es la chispa que enciende la llama del aprendizaje.",
+    autor: "Anonymous"
+  },
+  14: {
+    frase: "Nunca te detengas aprendiendo, porque la vida nunca se detiene enseñando.",
+    autor: "Anonymous"
+  },
+  15: {
+    frase: "La perseverancia es la madre del éxito en la programación.",
+    autor: "Anonymous"
+  },
+  16: {
+    frase: "Cada error es una oportunidad de aprender algo nuevo.",
+    autor: "Anonymous"
+  },
+  17: {
+    frase: "La programación es la magia de convertir sueños en realidad a través del código.",
+    autor: "Anonymous"
+  },
+  18: {
+    frase: "La mejor manera de predecir el futuro es programarlo.",
+    autor: "Anonymous"
+  },
+  19: {
+    frase: "La calidad nunca es un accidente; siempre es el resultado de un esfuerzo de la inteligencia.",
+    autor: "John Ruskin"
+  },
+  20: {
+    frase: "La imaginación es más importante que el conocimiento.",
+    autor: "Albert Einstein"
+  },
+  21: {
+    frase: "El código limpio es siempre más rápido y más seguro.",
+    autor: "Anonymous"
+  },
+  22: {
+    frase: "El software está comiendo el mundo.",
+    autor: "Marc Andreessen"
+  },
+  23: {
+    frase: "La creatividad es la inteligencia divirtiéndose.",
+    autor: "Albert Einstein"
+  },
+  24: {
+    frase: "La excelencia no es un acto, sino un hábito.",
+    autor: "Aristóteles"
+  },
+  25: {
+    frase: "La programación es la única profesión en la que los trozos de papel más pequeños pueden tener el mayor impacto.",
+    autor: "Anonymous"
+  },
+  26: {
+    frase: "La tecnología hace posible lo que antes era imposible.",
+    autor: "Anonymous"
+  },
+  27: {
+    frase: "La magia está en pensar más allá de las líneas de código.",
+    autor: "Anonymous"
+  },
+  28: {
+    frase: "La programación es la traducción de las ideas en acción.",
+    autor: "Anonymous"
+  },
+  29: {
+    frase: "La verdadera creatividad radica en la simplicidad y la elegancia del código.",
+    autor: "Anonymous"
+  },
+  30: {
+    frase: "La programación es como la poesía del siglo XXI, donde los artistas crean con ceros y unos.",
+    autor: "Anonymous"
+  }
+};
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+        const handleClick = () => {
+            const index = getRandomInt(30)+1;
+            console.log(index);
+            console.log(Quotes[index])
+            document.getElementById("text").innerHTML = `<i class=\"fa-solid p-2 fa-quote-left\"></i>${Quotes[index].frase}<i class=\" p-2 fa-solid fa-quote-right\"></i>`
+            document.getElementById("author").innerHTML = `${Quotes[index].autor}`
+        }
+    </script>
 </head>
 <body class="d-flex vh-100 bg-primary">
     <div id="quote-box"  class="container-sm card rounded-5 align-self-center text-center">
@@ -17,7 +152,7 @@
         <div class="row mx-3">
             <button id="new-quote" class="col-2 btn my-4 ms-4 btn btn-primary align-self-start fs-6" type="button"><i class="fa-brands fa-x-twitter"></i></button>
             <div class="col-4 "></div>
-            <button id="new-quote" class="col-5 btn my-4 btn btn-primary align-self-end fs-6" type="button">Press</button>
+            <button id="new-quote" onclick="handleClick()" class="col-5 btn my-4 btn btn-primary align-self-end fs-6" type="button">Press</button>
         </div>
     </div>
 </body>
